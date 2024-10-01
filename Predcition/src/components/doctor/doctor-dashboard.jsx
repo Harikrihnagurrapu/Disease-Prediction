@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import "../assets/styles/doctor-dashboard.css";
+import "../../assets/styles/doctor-dashboard.css";
 
 const DoctorDashboard = () => {
   const [files, setFiles] = useState([]);

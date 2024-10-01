@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom"; // Import Link for navigation
-import "../assets/styles/Login.css";
+import "../../assets/styles/Login.css";
 
 function LoginPage() {
   return (
@@ -8,7 +8,7 @@ function LoginPage() {
       <div id="navbar">
         {/* Use Link instead of a tag for React navigation */}
         <Link to="/" id="nav-items">Home</Link>
-        <Link to="/Login-doctor" id="nav-items">
+        <Link to="/doctor/login" id="nav-items">
           Doctor Login
         </Link>
       </div>
@@ -28,7 +28,7 @@ function LoginPage() {
             <div className="input-group">
               <input type="password" placeholder="Password" required />
             </div>
-            <Link to="/user-dashboard"><button type="submit" className="login-btn">
+            <Link to="/user/dashboard"><button type="submit" className="login-btn">
               LOGIN
             </button></Link>
           </form>

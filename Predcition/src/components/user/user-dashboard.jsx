@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../assets/styles/user-dashboard.css";
+import "../../assets/styles/user-dashboard.css";
 
 const DiseasePrediction = () => {
   const [file, setFile] = useState(null);

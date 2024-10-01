@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom"; // Use Link for internal navigation
-import "../assets/styles/Login.css";
+import "../../assets/styles/Login.css";
 
 function Logi() {
   return (
@@ -8,7 +8,7 @@ function Logi() {
       <div id="navbar">
         {/* Use Link for navigation to avoid page reload */}
         <Link to="/" id="nav-items">Home</Link>
-        <Link to="/Login-user" id="nav-items">User Login</Link>
+        <Link to="/user/login" id="nav-items">User Login</Link>
       </div>
       <div className="login-container">
         <div className="login-box">
@@ -24,7 +24,7 @@ function Logi() {
             <div className="input-group">
               <input type="password" placeholder="Password" required />
             </div>
-            <Link to="/doctor-dashboard"><button type="submit" className="login-btn">
+            <Link to="/doctor/dashboard"><button type="submit" className="login-btn">
               LOGIN
             </button></Link>
           </form>
