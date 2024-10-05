@@ -25,16 +25,23 @@ const LiverDiseasePrediction = () => {
     setResult(null);
 
     try {
-      // Simulating API call
-      await new Promise(resolve => setTimeout(resolve, 2000)); // 2 second delay
+      const formData = new FormData();
+      formData.append('file', file);
 
-      // Simulated response
-      const simulatedResult = {
+      const response = await fetch('http://localhost:5000/predict_liver', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      setResult({
         fileName: file.name,
-        prediction: Math.random() > 0.5 ? "Likely not to have liver disease" : "May have liver disease"
-      };
-
-      setResult(simulatedResult);
+        prediction: data.prediction
+      });
     } catch (error) {
       console.error("Error analyzing report:", error);
       alert("An error occurred while analyzing the report. Please try again.");
